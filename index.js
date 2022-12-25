@@ -17,6 +17,12 @@ app.use(express.json())
 app.use('/api/auth', userRoutes)
 app.use('/api/messages', messageRoutes)
 
+app.use('/', (req, res) => {
+  res.send('Welcome to Palchat API')
+})
+
+const PORT = process.env.PORT || 5000
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
