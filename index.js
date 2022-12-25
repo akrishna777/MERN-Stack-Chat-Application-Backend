@@ -43,6 +43,7 @@ const io = socket(server, {
   cors: {
     origin: 'https://palchat.onrender.com',
     credentials: true,
+    methods: ['GET', 'POST'],
   },
 })
 
