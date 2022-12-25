@@ -41,7 +41,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: 'https://palchat.onrender.com',
+    origin: '*',
     credentials: true,
     methods: ['GET', 'POST'],
   },
