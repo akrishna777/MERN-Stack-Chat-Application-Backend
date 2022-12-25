@@ -131,6 +131,9 @@ module.exports.addToFriendList = async (req, res, next) => {
       await User.findByIdAndUpdate(userId, {
         $push: { friends: friend._id },
       })
+      await User.findByIdAndUpdate(friend._id, {
+        $push: { friends: userId },
+      })
       res.status(200).json({ message: 'User added successfully' })
     }
   } catch (error) {
